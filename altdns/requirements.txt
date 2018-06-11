@@ -1,0 +1,4 @@
+tldextract
+argparse
+termcolor
+dnspython
