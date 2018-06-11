@@ -1,0 +1,141 @@
+#!/usr/bin/env ruby
+# encoding: UTF-8
+$LOAD_PATH.unshift File.expand_path(File.dirname(__FILE__) + '/lib')
+
+require 'pp'
+require 'domain-profiler'
+require 'rubygems'
+require 'gchart'
+require 'erb'
+
+def fullname(name)
+  Name.new.full(name)
+end
+
+class Array
+  def lookup(host)
+    self.map{|name| Name.new.simplify(name,host) }.uniq
+  end
+end
+
+
+if ARGV.length == 0
+   print "Usage: ./profile-list [file containing one domain per line] 'header to put in HTML output'\n"
+   exit
+end
+
+filename = ARGV[0]
+file = File.new(filename)
+
+hosts = {}
+list_name = ARGV[1] ? ARGV[1] : 'REPLACE ME'
+
+file.map {|host|
+  if match_data = host.match(/^#List:(.*)/)
+    list_name = match_data[1]
+  end
+  next if host.match(/^#/)
+  host.chomp!
+  profile = DomainProfiler.new(host)
+
+  begin
+    out = {}
+    out[:web_host]   = profile.dns.a.map{|record| orgname(record.answer) }.lookup(host)
+    out[:dns_host]   = profile.dns.ns.map{|record| Name.new.shorten(record.answer) }.lookup(host)
+    out[:mail_host]  = profile.dns.mx.map{|record| Name.new.shorten(record.host) }.lookup(host)
+    out[:registrar]  = profile.whois.registrar.lookup(host)
+    out[:ssl_issuer] = profile.ssl.ca.lookup(host)
+    out[:ssl_type]   = profile.ssl.cn
+    hosts[host] = out
+  rescue
+  end
+
+}
+
+# Modify this to make stats on hosting provider, dns, mail, whois, ssl, ssn type and count HTML
+
+count = {}
+types =  [:web_host,:mail_host,:dns_host,:registrar,:ssl_issuer,:ssl_type]
+
+types.each { |kind| count[kind] = [] }
+
+# Turn the list of host data into a hash of type data
+hosts.each do |hostname,data|
+  data.each do |kind,value|
+    if kind === :ssl_type and not value[0].is_a? Symbol
+      if value[0].match(/^\*/)
+        ssl_type = :star
+      else
+        ssl_type = :normal
+      end
+
+      value = ssl_type
+    end
+
+    count[kind].push(value) 
+  end
+end
+
+output = {}
+count.each do |kind,values|
+  summary = {}
+  values.flatten.each do |value|
+    value = :other unless value.is_a? Symbol
+      
+    if summary[value].is_a? Integer
+      summary[value] += 1
+    else
+      summary[value] = 1
+    end
+  end
+  output[kind] = summary
+end
+
+# Collapse any item less than smallest_percent into the :other category
+smallest_percent = 0.02  
+output.each do |kind,values|
+  total = 1
+  values.each {|k,v| total += v}
+  smallest_value = total * smallest_percent
+  values.each {|k,v| 
+    if v < smallest_value
+      values[:other] = 1 unless values[:other].is_a? Integer
+      values[:other] += v
+      values.delete(k)
+    end
+  }
+end
+
+  full_name = {
+    :web_host => 'Web Host',
+    :mail_host => 'Email Host',
+    :dns_host => 'DNS Host',
+    :registrar => 'Registrar',
+    :ssl_issuer => 'SSL Issuer',
+    :ssl_type => 'Certificate Type',
+  }
+
+
+output.each do |kind, summary_data|
+  keys = []
+  values = []
+  summary_data.sort { |a,b| a[1] <=> b[1] }.each do |k,v|
+    keys.push(Name.new.full(k))
+    values.push(v)
+  end
+
+  output[kind] = Gchart.pie(:size => '400x200', 
+#                            :background => 'F8ECDC',
+                            :bar_color => ['CFF09E','A8DBA8','79BD9A','3B8686','0B486B'],
+                            :color => '', 
+                            :title => full_name[kind], 
+                            :labels => keys, 
+                            :data => values
+                            ) 
+end
+
+charts = []
+types.each do |kind|
+  charts.push( {:kind => kind, :url => output[kind] } )
+end
+puts ERB.new(File.read("view/html")).result

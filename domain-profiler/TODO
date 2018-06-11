@@ -1,0 +1,44 @@
+FIX ME: Why are some of the IP addresses for hp.com returning blank?
+
+We should be able to tell the difference between EC2 hosts and normal amazon hosts
+
+Determine if there is a whois error, or if it's a parsing error
+
+SSL detection should have a 3-6 second timeout.
+
+More complete spec tests:
+  - Test caching of ip-to-asn
+  - Write spec tests for ip-to-asn
+  - The DNS class could use some cleaning up.
+  - Strict input checking (run simplify on domain names first!)
+
+Add RDoc
+
+Examples folder?
+
+If it makes sense to make a gem, use Jeweler
+
+==================================================
+
+Decisions that cost money:
+  - Registrar
+  - Web host
+  - DNS host
+  - Mail host
+  - SSL Issuer
+  - SSL Certificate type
+
+Decisions that don't necessarily cost money:
+  - Where are images are hosted?
+  - SPF records, and values thereof
+  - TTL on DNS records
+  - Expiration date for domain
+  - Expiration date for ssl certificate
+  - Is there more than one result for the A, MX, or NS records?
+    - If so, are they in different Autonomous Systems?
+  - Are all services (A, MX, NS) in the same AS?
+  - Does the main webpage have valid XHTML?
+  - What type of frontend?
+  - What type of mailserver?
+  - What type of DNS server?
+  - Is there a * record in DNS?

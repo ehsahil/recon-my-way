@@ -1,0 +1,84 @@
+
+; <<>> DiG 9.4.3-P1 <<>> @4.2.2.2 ns google.com
+; (1 server found)
+;; global options:  printcmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 51169
+;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;google.com.			IN	NS
+
+;; ANSWER SECTION:
+google.com.		1735	IN	NS	ns3.google.com.
+google.com.		1735	IN	NS	ns1.google.com.
+google.com.		1735	IN	NS	ns4.google.com.
+google.com.		1735	IN	NS	ns2.google.com.
+
+;; Query time: 14 msec
+;; SERVER: 4.2.2.2#53(4.2.2.2)
+;; WHEN: Tue Jul  7 23:13:56 2009
+;; MSG SIZE  rcvd: 100
+
+
+; <<>> DiG 9.4.3-P1 <<>> @4.2.2.2 a google.com
+; (1 server found)
+;; global options:  printcmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 52929
+;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;google.com.			IN	A
+
+;; ANSWER SECTION:
+google.com.		132	IN	A	74.125.127.100
+google.com.		132	IN	A	74.125.45.100
+google.com.		132	IN	A	74.125.67.100
+
+;; Query time: 14 msec
+;; SERVER: 4.2.2.2#53(4.2.2.2)
+;; WHEN: Tue Jul  7 23:13:56 2009
+;; MSG SIZE  rcvd: 76
+
+
+; <<>> DiG 9.4.3-P1 <<>> @4.2.2.2 mx google.com
+; (1 server found)
+;; global options:  printcmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 28506
+;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;google.com.			IN	MX
+
+;; ANSWER SECTION:
+google.com.		9016	IN	MX	10 smtp3.google.com.
+google.com.		9016	IN	MX	10 smtp4.google.com.
+google.com.		9016	IN	MX	10 smtp1.google.com.
+google.com.		9016	IN	MX	10 smtp2.google.com.
+
+;; Query time: 10 msec
+;; SERVER: 4.2.2.2#53(4.2.2.2)
+;; WHEN: Tue Jul  7 23:13:56 2009
+;; MSG SIZE  rcvd: 116
+
+
+; <<>> DiG 9.4.3-P1 <<>> @4.2.2.2 txt google.com
+; (1 server found)
+;; global options:  printcmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 26279
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;google.com.			IN	TXT
+
+;; ANSWER SECTION:
+google.com.		1145	IN	TXT	"v=spf1 include:_netblocks.google.com ~all"
+
+;; Query time: 15 msec
+;; SERVER: 4.2.2.2#53(4.2.2.2)
+;; WHEN: Tue Jul  7 23:13:56 2009
+;; MSG SIZE  rcvd: 82
+

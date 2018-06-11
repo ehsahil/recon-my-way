@@ -1,0 +1,30 @@
+name: amass
+version: 'v2.1.1'
+summary: In-Depth Subdomain Enumeration
+description: |
+  The amass tool searches Internet data sources, performs brute-force 
+  subdomain enumeration, searches web archives, and uses machine learning
+  to generate additional subdomain name guesses. DNS name resolution
+  is performed across many public servers so the authoritative server
+  will see the traffic coming from different locations.
+
+
+grade: stable
+confinement: strict
+
+
+apps:
+  amass:
+    command: bin/amass
+    plugs: [home, network, removable-media]
+
+
+parts:
+  go:
+    source-tag: go1.10
+  amass:
+    after: [go]
+    source: https://github.com/caffix/amass
+    source-type: git
+    plugin: go
+    go-importpath: github.com/caffix/amass
