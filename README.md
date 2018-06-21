@@ -150,7 +150,7 @@ root@recon-my-way:~# gobuster #test run
 
 Note: All credits goes to the original developers of the tools listed in this repository. I do not own any of the tool listed in this repository. 
 
-Contact me via Twitter
+Contact me via 
 [![Twitter](https://img.shields.io/badge/twitter-@ehsahil-blue.svg)](https://twitter.com/ehsahil)
 
 Thanks @mdhama for helping me out. 
