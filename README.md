@@ -1,6 +1,6 @@
 # Recon My Way. 
 
-##  Tools and Scripts setting up guide for personal use. 
+###  Tools and scripts setting up guide for personal use. 
 
 ### This repository contains the tools and scripts, I added in my recent blog post "Recon-My way" and I personally use. 
 
@@ -142,7 +142,7 @@ root@recon-my-way:~# go get -u github.com/OJ/gobuster
 root@recon-my-way:~# gobuster #test run
 ```
 
-All credits goes to the original developers of the tools listed in this repository. I do not own any of the tool listed in this repository. 
+Note: All credits goes to the original developers of the tools listed in this repository. I do not own any of the tool listed in this repository. 
 
-Contact me if anyone wants me to update this repository. 
+Contact me via Twitter
 [![Twitter](https://img.shields.io/badge/twitter-@ehsahil-blue.svg)](https://twitter.com/ehsahil)
