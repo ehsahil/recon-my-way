@@ -1,6 +1,7 @@
 #Tools based on a resolver.rb by @melvinsh
 #Repository: https://github.com/melvinsh/subresolve
 #Modified by @ehsahil for Personal Use.
+#tools included, Subfinder, Amass, Knock, Aquatone, Censys-subdomain-finder.
 require 'socket'
 require 'colorize'
 begin
@@ -11,8 +12,15 @@ rescue
 end
   puts "+--------------------------------Subdomains By Subfinder-------------------------------------+"
   #Get it from https://github.com/Ice3man543/subfinder
-  system("Docker run -it subfinder -d #{domain}")
+  #Comment out Amass If you want to use Subfinder
+  system("subfinder -d #{domain}")
   puts "Subfinder Ended..."
+  puts
+  puts "+--------------------------------Subdomains By Amass-------------------------------------+"
+  #Get it from https://github.com/caffix/amass
+  #Comment out Subfinder If you want to use amass
+  system("amass -d #{domain}")
+  puts "Amass Ended..."
   puts
   #Get it from https://github.com/christophetd/censys-subdomain-finder
   puts "+--------------------------------Subdomains BY Censys-------------------------------------+"
@@ -25,11 +33,6 @@ end
   system("knockpy #{domain}")
   puts "Knockpy Ended....."
   puts
-  puts "Sublist3r Started....."
-  #Get it from https://github.com/aboul3la/Sublist3r
-  puts "+-------------------------------Subdomains BY Sublister-----------------------------------+"
-  system("python Sublist3r/Sublist3r.py -d #{domain}")
-  puts "SUBLISTER ENDED..."
   puts
   puts "Aquatone-discover Started....."
   #Get it from https://github.com/michenriksen/aquatone
