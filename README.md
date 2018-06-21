@@ -16,53 +16,57 @@ subdomain.rb & recon.rb
 
 Standard machine to use. - Debian- 9.4 4 GB RAM on DigitalOcean (You can use according to your requirements.)
 
-Installation instructions. 
+Installation instructions. (Debian Based systems)
 
 1. Git Installation
+sudo apt-get upgrade
+sudo apt-get update
+sudo apt-get install git
 
-root@recon-my-way:~ sudo apt-get update
-root@recon-my-way:~ sudo apt-get upgrade
-root@recon-my-way:~ sudo apt-get install git
+2. Curl  installation. 
 
-2.Go language installation. 
+apt install curl
 
-root@recon-my-way:~ curl -O https://dl.google.com/go/go1.10.2.linux-amd64.tar.gz
-root@recon-my-way:~ sha256sum go1.10.2-linux-amd64.tar.gz
-root@recon-my-way:~ tar xvf go1.10.2.linux-amd64.tar.gz
-root@recon-my-way:~ sudo chown -R root:root ./go
-root@recon-my-way:~ sudo mv go /usr/local
-root@recon-my-way:~ vi ~/.profile
+3. Go language installation. 
+
+ curl -O https://dl.google.com/go/go1.10.2.linux-amd64.tar.gz
+ sha256sum go1.10.2-linux-amd64.tar.gz
+tar xvf go1.10.2.linux-amd64.tar.gz
+sudo chown -R root:root ./go
+sudo mv go /usr/local
+vi ~/.profile
+
 and add
+
 export GOPATH=$HOME/work
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 source ~/.profile
 
 Cleaing Up-
+
 root@recon-my-way:~ rm -rf go1.10.1.linux-amd64.tar.gz
 root@recon-my-way:~ rm -rf work
 
 
-3. Ruby Language installation. 
+4. Ruby Language installation. 
 
-root@recon-my-way:~ apt-get install ruby-full
+apt-get install ruby-full
 
-4. Curl Language installation. 
-
-root@recon-my-way:~ apt install curl
 
 5. Pip & pip3 install.
 
-root@recon-my-way:~ apt install python-pip
-root@recon-my-way:~ apt install python3-pip	#python 3
+apt install python-pip
+apt install python3-pip	#python 3
 
 Setting up tools for subdomain.rb & recon.rb. 
 
 for subdomain.rb
 
 1. Amass
-root@recon-my-way:~ cd /usr/local/go
-root@recon-my-way:/usr/local/go# go get -u github.com/caffix/amass
-root@recon-my-way:/usr/local/go# amass
+
+cd /usr/local/go
+go get -u github.com/caffix/amass
+amass
 
 2. Aquatone
 
@@ -70,8 +74,8 @@ root@recon-my-way:~# gem install aquatone
 
 3. Knockpy
 
-
 4. Subfinder
+
 5. Sublist3r (Optional)
 
 for recon.rb
