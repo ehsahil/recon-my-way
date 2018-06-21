@@ -56,7 +56,7 @@ file.each_line do |subdomain|
   # Comment out of delete the Dirsearch if you want to use Gobuster
   puts "+-------------------------------------------------------------------------------------+"
   puts "#{subdomain}".colorize(color)
-  system("gobuster -w wordlists/personal.txt -u #{subdomain}")
+  system("gobuster -w Wordlists/personal.txt -u #{subdomain}")
   puts "GoBuster Process Finished."
   puts
   puts
