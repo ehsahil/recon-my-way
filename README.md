@@ -110,7 +110,7 @@ root@recon-my-way:~# sudo pip install -r requirements.txt
 
 ## recon.rb
 
-### host 
+### Host and other dns utils.  
 
 ```bash
 root@recon-my-way:~# apt-get install dnsutils
