@@ -67,6 +67,13 @@ root@recon-my-way:~# apt install python3-pip	//for python 3
 
 ## subdomain.rb
 
+### colorize gem install
+
+```bash
+root@recon-my-way:~# gem install colorize
+```
+
+
 ### Amass
 
 ```
@@ -96,19 +103,26 @@ root@recon-my-way:~# go get -u github.com/Ice3man543/subfinder
 root@recon-my-way:~# subfinder #test run
 ```
 
-### Sublist3r (Optional)
+### Subdomains by censys
 
 ```bash
+root@recon-my-way:~# pip install censys
+root@recon-my-way:~# export CENSYS_API_ID=Your_Censys_APP_ID
+root@recon-my-way:~# export CENSYS_API_SECRET=Your_Censys_APP_ID
+```
+
+### Sublist3r (No longer using-Optional)
+
+```bash
+root@recon-my-way:~#git clone https://github.com/aboul3la/Sublist3r.git
 root@recon-my-way:~# cd sublist3r
 root@recon-my-way:~# sudo apt-get install python-requests
 root@recon-my-way:~# sudo pip install -r requirements.txt
 
-
 ```
 
-
-
 ## recon.rb
+
 
 ### Host and other dns utils.  
 
