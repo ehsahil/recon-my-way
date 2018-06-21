@@ -98,8 +98,17 @@ root@recon-my-way:~# subfinder #test run
 
 ### Sublist3r (Optional)
 
+```bash
+root@recon-my-way:~# cd sublist3r
+root@recon-my-way:~# sudo apt-get install python-requests
+root@recon-my-way:~# sudo pip install -r requirements.txt
 
-## Setting up recon.rb
+
+```
+
+
+
+## recon.rb
 
 ### host 
 
@@ -143,3 +152,5 @@ Note: All credits goes to the original developers of the tools listed in this re
 
 Contact me via Twitter
 [![Twitter](https://img.shields.io/badge/twitter-@ehsahil-blue.svg)](https://twitter.com/ehsahil)
+
+Thanks @mdhama for helping me out. 
