@@ -79,7 +79,7 @@ root@recon-my-way:~# gem install colorize
 ```
 root@recon-my-way:~# cd /usr/local/go
 root@recon-my-way:~# go get -u github.com/caffix/amass
-root@recon-my-way:~# amass #test run
+root@recon-my-way:~# amass //test run
 ```
 ### Aquatone
 
@@ -100,7 +100,7 @@ root@recon-my-way:~# sudo python setup.py install
 ```
 root@recon-my-way:~# cd /usr/local/go
 root@recon-my-way:~# go get -u github.com/Ice3man543/subfinder
-root@recon-my-way:~# subfinder #test run
+root@recon-my-way:~# subfinder //test run
 ```
 
 ### Subdomains by censys
@@ -114,7 +114,7 @@ root@recon-my-way:~# export CENSYS_API_SECRET=Your_Censys_APP_ID
 ### Sublist3r (No longer using-Optional)
 
 ```bash
-root@recon-my-way:~#git clone https://github.com/aboul3la/Sublist3r.git
+root@recon-my-way:~# git clone https://github.com/aboul3la/Sublist3r.git
 root@recon-my-way:~# cd sublist3r
 root@recon-my-way:~# sudo apt-get install python-requests
 root@recon-my-way:~# sudo pip install -r requirements.txt
@@ -159,12 +159,12 @@ root@recon-my-way:~# python dirsearch -u https://url.com -e *(or any file extens
 ```
 root@recon-my-way:~# cd /usr/local/go
 root@recon-my-way:~# go get -u github.com/OJ/gobuster
-root@recon-my-way:~# gobuster #test run
+root@recon-my-way:~# gobuster //test run
 ```
 
 Note: All credits goes to the original developers of the tools listed in this repository. I do not own any of the tool listed in this repository. 
 
-Contact me via 
-[![Twitter](https://img.shields.io/badge/twitter-@ehsahil-blue.svg)](https://twitter.com/ehsahil)
+Thanks @mdhama
 
-Thanks @mdhama for helping me out. 
+Contact me
+[![Twitter](https://img.shields.io/badge/twitter-@ehsahil-blue.svg)](https://twitter.com/ehsahil)
