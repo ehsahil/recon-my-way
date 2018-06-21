@@ -12,7 +12,7 @@ Machine Configuration - Debian- 9.4, 4 GB RAM on DigitalOcean (You can use any c
 
 ## Important things to Install before setting up tools (Debian Based OS)
 
-### 1. Git Installation
+### Git Installation
 
 ```bash
 sudo apt-get upgrade
@@ -22,14 +22,14 @@ sudo apt-get install git
 
 
 
-### 2. Curl  installation. 
+### Curl  installation. 
 
 ```bash
 apt install curl
 ```
 
 
-### 3. Go language installation. 
+### Go language installation. 
 
 ```bash
 curl -O https://dl.google.com/go/go1.10.2.linux-amd64.tar.gz
@@ -40,7 +40,7 @@ sudo mv go /usr/local
 vi ~/.profile
 ```
 
-## and add the following lines in `.profile`
+#### and add the following lines in `.profile`
 
 ```bash
 export GOPATH=$HOME/work
@@ -55,37 +55,37 @@ root@recon-my-way:~ rm -rf go1.10.1.linux-amd64.tar.gz
 root@recon-my-way:~ rm -rf work
 ```
 
-### 4. Ruby Language installation. 
+### Ruby Language installation. 
 
 ```bash
 apt-get install ruby-full
 ```
 
-### 5. Pip & pip3 install.
+### Pip & pip3 install.
 
 ```bash
 apt install python-pip
-apt install python3-pip	#python 3
+apt install python3-pip	//for python 3
 ```
 
 ## Setting up tools for subdomain.rb & recon.rb. 
 
 ## subdomain.rb
 
-### 1. Amass
+### Amass
 
 ```
 cd /usr/local/go
 go get -u github.com/caffix/amass
 amass #test to run
 ```
-### 2. Aquatone
+### Aquatone
 
 ```bash
 root@recon-my-way:~# gem install aquatone
 ```
 
-### 3. Knockpy
+### Knockpy
 ```bash
 cd knock
 sudo apt-get install python-dnspython
@@ -93,7 +93,7 @@ vi knockpy/config.json <- set your virustotal API_KEY
 sudo python setup.py install
 
 ```
-### 4. Subfinder
+### Subfinder
 
 ```
 cd /usr/local/go
@@ -101,23 +101,23 @@ go get -u github.com/Ice3man543/subfinder
 amass #test to run
 ```
 
-### 5. Sublist3r (Optional)
+### Sublist3r (Optional)
 
 
 ## Setting up recon.rb
 
-### 1. host 
+### host 
 
 ```bash
 # apt-get install dnsutils
 ```
 
-### 2. Nmap
+### Nmap
 
 ```bash
 # apt-get install nmap
 ```
-### 3. AWS CLI
+### AWS CLI
 
 ```bash
 pip install awscli
@@ -126,7 +126,7 @@ aws configure //Add your AWS keys
 ```
 
 
-### 4. Dirsearch
+### Dirsearch
 
 Usage: 
 
@@ -135,7 +135,7 @@ python dirsearch -u https://url.com -e *(or any file extension)
 ```
 
 
-### 5. GoBuster
+### GoBuster
 
 ```
 cd /usr/local/go
@@ -148,5 +148,4 @@ amass #test to run
 If you think you have a tool, which will reduce the operations time and useful, feel free to contact me via twitter. 
 
 [![Twitter](https://img.shields.io/badge/twitter-@ehsahil-blue.svg)](https://twitter.com/ehsahil)
-
 
