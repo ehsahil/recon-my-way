@@ -1,19 +1,16 @@
 # Recon My Way. 
 
-##Recon my way -- tools and setting up Guide. 
+## Recon my way -- tools and setting up Guide. 
 
-### This repository contains the tools and scripts, I added in my recent blog post **Recon-My way**
+### This repository contains the tools and scripts, I added in my recent blog post "Recon-My way" and I personally use. 
 
-https://medium.com/ehsahil/recon-my-way-82b7e5f62e21
+Here is my blogpost if you have'nt read it yet. https://medium.com/ehsahil/recon-my-way-82b7e5f62e21
 
-I created this because there are many tools available these days and new users are confused about which tools to use and which are not much useful. 
+I created this repository for personal use to reduce the installation time on the new machine I work on. 
 
-Anyone can contribute to this repository If they think they have a useful tool. 
+Machine Configuration - Debian- 9.4, 4 GB RAM on DigitalOcean (You can use any config but this is recommanded)
 
-
-Standard machine I use. - Debian- 9.4 4 GB RAM on DigitalOcean (You can use according to your requirements.)
-
-## Important things to Install before setting up tools (Debian Based systems)
+## Important things to Install before setting up tools (Debian Based OS)
 
 ### 1. Git Installation
 
@@ -29,7 +26,7 @@ sudo apt-get install git
 
 ```bash
 apt install curl
-```bash
+```
 
 
 ### 3. Go language installation. 
@@ -51,7 +48,7 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 source ~/.profile
 ```
 
-### Cleaing Up-
+### Cleaing Up
 
 ```bash
 root@recon-my-way:~ rm -rf go1.10.1.linux-amd64.tar.gz
@@ -148,6 +145,8 @@ amass #test to run
 
 
 
-other useful tools will be locally saved when you clone this repository. 
+If you think you have a tool, which will reduce the operations time and useful, feel free to contact me via twitter. 
+
+[![Twitter](https://img.shields.io/badge/twitter-@ehsahil-blue.svg)](https://twitter.com/ehsahil)
 
 
