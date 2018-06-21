@@ -1,23 +1,21 @@
 # Recon My Way. 
 
-## Recon my way -- tools and setting up Guide. 
+##  Tools and Scripts setting up guide for personal use. 
 
 ### This repository contains the tools and scripts, I added in my recent blog post "Recon-My way" and I personally use. 
 
 Here is my blogpost if you have'nt read it yet. https://medium.com/ehsahil/recon-my-way-82b7e5f62e21
 
-I created this repository for personal use to reduce the installation time on the new machine I work on. 
-
-Machine Configuration - Debian- 9.4, 4 GB RAM on DigitalOcean (You can use any config but this is recommanded)
+Machine Configuration I use - Debian- 9.4, 4 GB RAM on DigitalOcean (You can use any config but this is recommanded)
 
 ## Important things to Install before setting up tools (Debian Based OS)
 
 ### Git Installation
 
 ```bash
-sudo apt-get upgrade
-sudo apt-get update
-sudo apt-get install git
+root@recon-my-way:~# sudo apt-get upgrade
+root@recon-my-way:~# sudo apt-get update
+root@recon-my-way:~# sudo apt-get install git
 ```
 
 
@@ -25,19 +23,19 @@ sudo apt-get install git
 ### Curl  installation. 
 
 ```bash
-apt install curl
+root@recon-my-way:~# apt install curl
 ```
 
 
 ### Go language installation. 
 
 ```bash
-curl -O https://dl.google.com/go/go1.10.2.linux-amd64.tar.gz
-sha256sum go1.10.2-linux-amd64.tar.gz
-tar xvf go1.10.2.linux-amd64.tar.gz
-sudo chown -R root:root ./go
-sudo mv go /usr/local
-vi ~/.profile
+root@recon-my-way:~# curl -O https://dl.google.com/go/go1.10.2.linux-amd64.tar.gz
+root@recon-my-way:~# sha256sum go1.10.2-linux-amd64.tar.gz
+root@recon-my-way:~# tar xvf go1.10.2.linux-amd64.tar.gz
+root@recon-my-way:~# sudo chown -R root:root ./go
+root@recon-my-way:~# sudo mv go /usr/local
+root@recon-my-way:~# vi ~/.profile
 ```
 
 #### and add the following lines in `.profile`
@@ -51,21 +49,21 @@ source ~/.profile
 ### Cleaing Up
 
 ```bash
-root@recon-my-way:~ rm -rf go1.10.1.linux-amd64.tar.gz
-root@recon-my-way:~ rm -rf work
+root@recon-my-way:~# rm -rf go1.10.1.linux-amd64.tar.gz
+root@recon-my-way:~# rm -rf work
 ```
 
 ### Ruby Language installation. 
 
 ```bash
-apt-get install ruby-full
+root@recon-my-way:~# apt-get install ruby-full
 ```
 
 ### Pip & pip3 install.
 
 ```bash
-apt install python-pip
-apt install python3-pip	//for python 3
+root@recon-my-way:~# apt install python-pip
+root@recon-my-way:~# apt install python3-pip	//for python 3
 ```
 
 ## Setting up tools for subdomain.rb & recon.rb. 
@@ -75,9 +73,9 @@ apt install python3-pip	//for python 3
 ### Amass
 
 ```
-cd /usr/local/go
-go get -u github.com/caffix/amass
-amass #test to run
+root@recon-my-way:~# cd /usr/local/go
+root@recon-my-way:~# go get -u github.com/caffix/amass
+root@recon-my-way:~# amass #test run
 ```
 ### Aquatone
 
@@ -87,18 +85,18 @@ root@recon-my-way:~# gem install aquatone
 
 ### Knockpy
 ```bash
-cd knock
-sudo apt-get install python-dnspython
-vi knockpy/config.json <- set your virustotal API_KEY
-sudo python setup.py install
+root@recon-my-way:~# cd knock
+root@recon-my-way:~# sudo apt-get install python-dnspython
+root@recon-my-way:~# vi knockpy/config.json <- set your virustotal API_KEY
+root@recon-my-way:~# sudo python setup.py install
 
 ```
 ### Subfinder
 
 ```
-cd /usr/local/go
-go get -u github.com/Ice3man543/subfinder
-amass #test to run
+root@recon-my-way:~# cd /usr/local/go
+root@recon-my-way:~# go get -u github.com/Ice3man543/subfinder
+root@recon-my-way:~# subfinder #test run
 ```
 
 ### Sublist3r (Optional)
@@ -109,20 +107,21 @@ amass #test to run
 ### host 
 
 ```bash
-# apt-get install dnsutils
+root@recon-my-way:~# apt-get install dnsutils
 ```
 
 ### Nmap
 
 ```bash
-# apt-get install nmap
+root@recon-my-way:~# apt-get install nmap
 ```
+
 ### AWS CLI
 
 ```bash
-pip install awscli
+root@recon-my-way:~# pip install awscli
 
-aws configure //Add your AWS keys
+root@recon-my-way:~# aws configure //Add your AWS keys
 ```
 
 
@@ -131,21 +130,19 @@ aws configure //Add your AWS keys
 Usage: 
 
 ```bash
-python dirsearch -u https://url.com -e *(or any file extension)
+root@recon-my-way:~# python dirsearch -u https://url.com -e *(or any file extension)
 ```
 
 
 ### GoBuster
 
 ```
-cd /usr/local/go
-go get -u github.com/Ice3man543/subfinder
-amass #test to run
+root@recon-my-way:~# cd /usr/local/go
+root@recon-my-way:~# go get -u github.com/OJ/gobuster
+root@recon-my-way:~# gobuster #test run
 ```
 
+All credits goes to the original developers of the tools listed in this repository. I do not own any of the tool listed in this repository. 
 
-
-If you think you have a tool, which will reduce the operations time and useful, feel free to contact me via twitter. 
-
+Contact me if anyone wants me to update this repository. 
 [![Twitter](https://img.shields.io/badge/twitter-@ehsahil-blue.svg)](https://twitter.com/ehsahil)
-
