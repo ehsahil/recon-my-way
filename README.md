@@ -1,8 +1,8 @@
 # Recon My Way. 
 
-Recon my way -- tools and setting up Guide. 
+##Recon my way -- tools and setting up Guide. 
 
-This repository contains the tools and scripts, I added in my recent blog post **Recon-My way**
+### This repository contains the tools and scripts, I added in my recent blog post **Recon-My way**
 
 https://medium.com/ehsahil/recon-my-way-82b7e5f62e21
 
@@ -10,128 +10,144 @@ I created this because there are many tools available these days and new users a
 
 Anyone can contribute to this repository If they think they have a useful tool. 
 
-I have also added my two simple scripts. 
 
-subdomain.rb & recon.rb 
+Standard machine I use. - Debian- 9.4 4 GB RAM on DigitalOcean (You can use according to your requirements.)
 
-Standard machine to use. - Debian- 9.4 4 GB RAM on DigitalOcean (You can use according to your requirements.)
+## Important things to Install before setting up tools (Debian Based systems)
 
-Installation instructions. (Debian Based systems)
+### 1. Git Installation
 
-1. Git Installation
+```bash
 sudo apt-get upgrade
 sudo apt-get update
 sudo apt-get install git
+```
 
-2. Curl  installation. 
 
+
+### 2. Curl  installation. 
+
+```bash
 apt install curl
+```bash
 
-3. Go language installation. 
 
- curl -O https://dl.google.com/go/go1.10.2.linux-amd64.tar.gz
- sha256sum go1.10.2-linux-amd64.tar.gz
+### 3. Go language installation. 
+
+```bash
+curl -O https://dl.google.com/go/go1.10.2.linux-amd64.tar.gz
+sha256sum go1.10.2-linux-amd64.tar.gz
 tar xvf go1.10.2.linux-amd64.tar.gz
 sudo chown -R root:root ./go
 sudo mv go /usr/local
 vi ~/.profile
+```
 
-and add
+## and add the following lines in `.profile`
 
+```bash
 export GOPATH=$HOME/work
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 source ~/.profile
+```
 
-Cleaing Up-
+### Cleaing Up-
 
+```bash
 root@recon-my-way:~ rm -rf go1.10.1.linux-amd64.tar.gz
 root@recon-my-way:~ rm -rf work
+```
 
+### 4. Ruby Language installation. 
 
-4. Ruby Language installation. 
-
+```bash
 apt-get install ruby-full
+```
 
+### 5. Pip & pip3 install.
 
-5. Pip & pip3 install.
-
+```bash
 apt install python-pip
 apt install python3-pip	#python 3
+```
 
-Setting up tools for subdomain.rb & recon.rb. 
+## Setting up tools for subdomain.rb & recon.rb. 
 
-for subdomain.rb
+## subdomain.rb
 
-1. Amass
+### 1. Amass
 
+```
 cd /usr/local/go
 go get -u github.com/caffix/amass
-amass
+amass #test to run
+```
+### 2. Aquatone
 
-2. Aquatone
-
+```bash
 root@recon-my-way:~# gem install aquatone
+```
 
-3. Knockpy
+### 3. Knockpy
+```bash
+cd knock
+sudo apt-get install python-dnspython
+vi knockpy/config.json <- set your virustotal API_KEY
+sudo python setup.py install
 
-4. Subfinder
+```
+### 4. Subfinder
 
-5. Sublist3r (Optional)
+```
+cd /usr/local/go
+go get -u github.com/Ice3man543/subfinder
+amass #test to run
+```
 
-for recon.rb
-
-1. host 
-2. nmap
-3. AWS CLI
-4. Dirsearch/Gobuster. 
-
+### 5. Sublist3r (Optional)
 
 
-Tools installation. 
+## Setting up recon.rb
 
-1. JSParser
+### 1. host 
 
-2. LinkFinder
+```bash
+# apt-get install dnsutils
+```
 
-3. VHost Scan
+### 2. Nmap
 
-4. AltDNS
+```bash
+# apt-get install nmap
+```
+### 3. AWS CLI
 
-5. Amass
+```bash
+pip install awscli
 
-6. Aquatone
+aws configure //Add your AWS keys
+```
 
-7. Bucket Finder.
 
-8. Censys Enumeration. 
+### 4. Dirsearch
 
-9. Censys subdomain finder. 
+Usage: 
 
-10. Dirsearch
+```bash
+python dirsearch -u https://url.com -e *(or any file extension)
+```
 
-11. Domain Profiler
 
-12. Domains from CSP
+### 5. GoBuster
 
-13. Knock
+```
+cd /usr/local/go
+go get -u github.com/Ice3man543/subfinder
+amass #test to run
+```
 
-14. Lazy Recon. 
 
-15. LazyS3
 
-16. Lazy Shot
+other useful tools will be locally saved when you clone this repository. 
 
-17. Mass Scan
-
-18. S3 Bucket Finder
-
-19. Sub Resolve. 
-
-20. WebScreenshot
-
-21. recon.rb 
-
-22. subdomain.rb 
-
-23. waybackurl.py 
 
