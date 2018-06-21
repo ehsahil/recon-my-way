@@ -2,6 +2,7 @@
 #Tool based on a resolver.rb by @melvinsh
 #Original Repository: https://github.com/melvinsh/subresolve
 #Modified by @ehsahil for Personal Use.
+#Tools used - Host, Nmap, AWS CLI, Dirsearch, Gobuster
 require 'socket'
 require 'colorize'
 
@@ -50,6 +51,13 @@ file.each_line do |subdomain|
   puts "#{subdomain}".colorize(color)
   system("python3 dirsearch/dirsearch.py  -e * -u #{subdomain}")
   puts "Dirsearch Process Finished."
+  puts "GoBuster Started."
+  # Get it from https://github.com/OJ/gobuster
+  # Comment out of delete the Dirsearch if you want to use Gobuster
+  puts "+-------------------------------------------------------------------------------------+"
+  puts "#{subdomain}".colorize(color)
+  system("gobuster -w wordlists/personal.txt -u #{subdomain}")
+  puts "GoBuster Process Finished."
   puts
   puts
 end
