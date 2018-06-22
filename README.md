@@ -166,5 +166,4 @@ Note: All credits goes to the original developers of the tools listed in this re
 
 Thanks @mdhama
 
-Contact me
 [![Twitter](https://img.shields.io/badge/twitter-@ehsahil-blue.svg)](https://twitter.com/ehsahil)
