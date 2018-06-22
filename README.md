@@ -164,6 +164,10 @@ root@recon-my-way:~# gobuster //test run
 
 Note: All credits goes to the original developers of the tools listed in this repository. I do not own any of the tool listed in this repository. 
 
-Thanks @mdhama
 
+### Contributors 
 [![Twitter](https://img.shields.io/badge/twitter-@ehsahil-blue.svg)](https://twitter.com/ehsahil)
+
+[![Twitter](https://img.shields.io/badge/twitter-@MukeshDhama-blue.svg)](https://twitter.com/MukeshDhama)
+
+
