@@ -77,9 +77,9 @@ root@recon-my-way:~# gem install colorize
 ### Amass
 
 ```
-root@recon-my-way:~# go get -u github.com/caffix/amass
-root@recon-my-way:~# amass //test run
+root@recon-my-way:~# go get -u github.com/OWASP/Amass/...
 ```
+
 ### Aquatone
 
 ```bash
