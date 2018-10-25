@@ -77,7 +77,6 @@ root@recon-my-way:~# gem install colorize
 ### Amass
 
 ```
-root@recon-my-way:~# cd /usr/local/go
 root@recon-my-way:~# go get -u github.com/caffix/amass
 root@recon-my-way:~# amass //test run
 ```
@@ -98,8 +97,7 @@ root@recon-my-way:~# sudo python setup.py install
 ### Subfinder
 
 ```
-root@recon-my-way:~# cd /usr/local/go
-root@recon-my-way:~# go get -u github.com/Ice3man543/subfinder
+root@recon-my-way:~# go get github.com/subfinder/subfinder
 root@recon-my-way:~# subfinder //test run
 ```
 
